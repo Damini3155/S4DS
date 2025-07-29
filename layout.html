@@ -1,0 +1,2598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S4DS - Society for Data Science</title>
+    <style>
+        :root {
+    --primary: #0f172a;        /* Deep navy - base background */
+    --secondary: #1e293b;      /* Slate blue - for cards/sections */
+    --accent: #38bdf8;         /* Bright cyan - action & links */
+    --highlight: #6366f1;      /* Indigo/violet - hover/alternate accent */
+    --light: #1e293b;          /* Light card background */
+    --dark: #0b1120;           /* Deepest shade for headers/footers */
+    --text: #f8fafc;           /* Main white text */
+    --text-light: #94a3b8;     /* Muted secondary text */
+    --glow: rgba(56, 189, 248, 0.35); /* Blue neon glow for shadows */
+}
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.vortexa-hero {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1629909615364-3626c338aa57?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  overflow: hidden;
+}
+
+
+.vortexa-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.85); /* dark overlay */
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.vortexa-content {
+  text-align: center;
+  max-width: 800px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.vortexa-content h1 {
+  font-size: 3.5rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px var(--glow);
+  letter-spacing: 3px;
+}
+
+.vortexa-content h2 {
+  font-size: 1.8rem;
+  color: var(--highlight);
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 8px var(--glow);
+}
+
+.vortexa-content p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.vortexa-btn {
+  background: linear-gradient(135deg, var(--highlight), var(--accent));
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 0 15px var(--glow);
+  transition: all 0.3s ease;
+}
+
+.vortexa-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--glow);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .vortexa-content h1 {
+    font-size: 2.5rem;
+  }
+  .vortexa-content h2 {
+    font-size: 1.4rem;
+  }
+  .vortexa-content p {
+    font-size: 1rem;
+  }
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-member {
+  background: rgba(30, 41, 59, 0.7); /* semi-dark translucent */
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px var(--glow);
+}
+
+.member-image {
+  height: 220px;
+  overflow: hidden;
+  border-bottom: 2px solid var(--accent);
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.team-member:hover .member-image img {
+  transform: scale(1.1);
+}
+
+.member-info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.member-info h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.3rem;
+  color: var(--accent);
+  text-shadow: 0 0 8px var(--glow);
+}
+
+.member-info .position {
+  display: block;
+  color: var(--highlight);
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  text-shadow: 0 0 4px var(--highlight);
+}
+
+.member-info p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.social-links a {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+.team-member::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--accent), var(--highlight));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.team-member:hover::before {
+  opacity: 1;
+}
+
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--dark);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 70%;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  nav.active ul {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.5;
+            overflow-x: hidden;
+            font-size: 14px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 0.8rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 0.4rem 0;
+            background: rgba(44, 62, 80, 0.98);
+            backdrop-filter: blur(8px);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .logo-img {
+            height: 40px;
+            margin-right: 12px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover .logo-img {
+            transform: rotate(15deg);
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        
+        .logo-main {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .logo-sub {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: normal;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding: 0.4rem 0;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease, transform 0.3s ease;
+            transform-origin: left;
+            transform: scaleX(0);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+            transform: scaleX(1);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(26, 37, 47, 0.9)), url('images/ai-generated-8540915_1280.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(231, 76, 60, 0.1), transparent 70%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .upcoming-events {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: left;
+            border-left: 4px solid var(--accent);
+            animation: pulse 2s infinite;
+        }
+        
+        .upcoming-events h3 {
+            margin-bottom: 1rem;
+            color: white;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .upcoming-events h3 i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .event-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+        
+        .event-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .event-item h4 {
+            color: white;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+        
+        .event-item .date {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(231, 76, 60, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+        
+        section {
+            padding: 4rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .section-title h2::before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 1px;
+            background: var(--text-light);
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.5;
+        }
+        
+        .about-sections {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .about-section {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 3px solid var(--accent);
+        }
+        
+        .about-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-section h3 {
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        
+        .about-section h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .coordinators {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .coordinators:hover {
+            transform: translateY(-3px);
+        }
+        
+        .coordinators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .coordinator-card {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            background: rgba(236, 240, 241, 0.5);
+            padding: 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border-left: 2px solid var(--accent);
+        }
+        
+        .coordinator-card:hover {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+        
+        .coordinator-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+        
+        .coordinator-card:hover .coordinator-img {
+            transform: scale(1.05);
+        }
+        
+        .coordinator-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .coordinator-card:hover .coordinator-img img {
+            transform: scale(1.1);
+        }
+        
+        .coordinator-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+        
+        .coordinator-info p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(231, 76, 60, 0.1), transparent 50%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .event-card:hover::before {
+            opacity: 1;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .event-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            z-index: 1;
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .event-card:hover .event-image img {
+            transform: scale(1.1);
+        }
+        
+        .event-info {
+            padding: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .event-info h3 {
+            margin-bottom: 0.6rem;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .event-info .date {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 0.8rem;
+            display: block;
+            font-size: 0.9rem;
+        }
+        
+        .event-info .btn {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.8rem;
+            margin-top: 0.8rem;
+            display: inline-block;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .team-member::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .team-member:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .member-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .member-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(44, 62, 80, 0.7), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .team-member:hover .member-image::after {
+            opacity: 1;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+        
+        .member-info {
+            padding: 1.5rem 1.2rem;
+        }
+        
+        .member-info h3 {
+            margin-bottom: 0.4rem;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .member-info .position {
+            color: var(--accent);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: block;
+            font-size: 0.85rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--primary);
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+        
+        .join-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            max-width: 700px;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .join-form:hover {
+            transform: translateY(-3px);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            background: rgba(236, 240, 241, 0.5);
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+            outline: none;
+            background: white;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.2rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 220px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(44, 62, 80, 0.7), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+        
+        .gallery-item i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            color: white;
+            font-size: 2.2rem;
+            opacity: 0;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover i {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            flex: 1;
+            min-width: 220px;
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--accent);
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-card:hover i {
+            transform: scale(1.1);
+        }
+        
+        .contact-card h3 {
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            max-width: 700px;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-form:hover {
+            transform: translateY(-3px);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(to right, var(--accent), var(--highlight));
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 2.5rem;
+            gap: 1.5rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 220px;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 2px;
+            background: var(--accent);
+            bottom: -6px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .footer-section p {
+            opacity: 0.8;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.7rem;
+        }
+        
+        .footer-section ul li a {
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--accent);
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        
+        .social-links-footer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .social-links-footer a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .social-links-footer a:hover {
+            color: var(--accent);
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            opacity: 0.7;
+            font-size: 0.85rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal.show {
+            opacity: 1;
+            display: flex;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+            animation: zoomIn 0.3s ease;
+        }
+        
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            transform: rotate(90deg);
+            color: var(--accent);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: row;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background: var(--dark);
+                transition: all 0.4s ease;
+                z-index: 999;
+                box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 1.5rem;
+                height: 100%;
+            }
+            
+            nav ul li {
+                margin: 0.8rem 0;
+            }
+            
+            .hamburger {
+                display: block;
+                z-index: 1000;
+            }
+            
+            .hamburger.active i::before {
+                content: '\f00d';
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            
+            .btn-outline {
+                margin-left: 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-sections {
+                flex-direction: column;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+            }
+            
+            .upcoming-events {
+                padding: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .logo {
+                flex-direction: row;
+                text-align: left;
+            }
+            
+            .logo-img {
+                margin-right: 8px;
+                margin-bottom: 0;
+            }
+            
+            .modal-content {
+                max-width: 95%;
+            }
+            
+            .upcoming-events h3 {
+                font-size: 1.1rem;
+            }
+            
+            .event-item h4 {
+                font-size: 0.9rem;
+            }
+            
+            .event-item .date {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* About Us Section Styles */
+        .about-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: var(--secondary);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-header h2 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px var(--glow);
+        }
+
+        .about-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .about-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-card h3 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .about-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--highlight);
+        }
+
+        .about-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .history-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent), var(--highlight));
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.3);
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+        }
+
+        /* Team Section Enhancements */
+        .team-section {
+            background-color: var(--secondary);
+            padding: 4rem 0;
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .team-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .team-header h2 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px var(--glow);
+        }
+
+        .team-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header id="header" class="scrolled" style="background: linear-gradient(to right, var(--primary), var(--secondary)); box-shadow: 0 4px 12px var(--glow);">
+    <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center; padding: 1rem 0;">
+        
+        <!-- Logo -->
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="images/logo.png" alt="Logo" class="logo-img" style="height: 42px; margin-right: 10px;">
+            <div class="logo-text">
+                <div class="logo-main" style="color: var(--accent); font-size: 1.5rem; font-weight: bold; letter-spacing: 1px;">S4DS</div>
+                <div class="logo-sub" style="color: var(--text-light); font-size: 0.75rem;">Empowering Innovators</div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav id="nav">
+            <ul style="display: flex; list-style: none; gap: 2rem; margin: 0;">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>  
+                <li><a href="#event-gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#join-us" class="nav-link">Join</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger (Mobile) -->
+        <div class="hamburger" id="hamburger" style="display: none; font-size: 1.5rem; color: var(--text); cursor: pointer;">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
+</header>
+
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1><br><br>Society for Data Science</h1>
+            <p>Empowering the next generation of data scientists through innovative learning, collaboration, and real-world applications.</p>
+            <div class="btn-group">
+                <a href="#join-us" class="btn">Join Now</a>
+                <a href="#events" class="btn btn-outline">Upcoming Events</a>
+            </div>
+            
+            <!-- Upcoming Events Highlight -->
+            <div class="upcoming-events">
+                <h3><i class="fas fa-calendar-alt"></i> Upcoming Events</h3>
+                <div class="event-item">
+                    <h4>VORTEXA 2.0</h4>
+                    <span class="date">Comming Soon....</span>
+                </div>
+                <div class="event-item">
+                    <h4> Blockchain and Web 3.0 Bootcamp</h4>
+                    <span class="date">7th July 15, 2025 | 03:30 pm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<section id="about" class="section" style="background-color: #0c162c; padding: 5rem 0; color: #fff;">
+  <style>
+    .about-container {
+      width: 90%;
+      max-width: 1300px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+      color: #3498ff;
+      margin-bottom: 1rem;
+    }
+
+    .section-title h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: #3498ff;
+      margin: 0.5rem auto 0;
+      border-radius: 5px;
+      animation: underline-grow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes underline-grow {
+      0% {
+        width: 50px;
+      }
+      100% {
+        width: 120px;
+      }
+    }
+
+    .about-sections {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .about-section {
+      background-color: #121212;
+      color: #fff;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0, 140, 255, 0.2);
+      flex: 1 1 40%;
+      max-width: 500px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-section:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 40px rgba(0, 140, 255, 0.4);
+    }
+
+    .about-section h3 {
+      color: #3498ff;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-section ul {
+      margin-left: 1.5rem;
+      line-height: 1.8;
+      color: #ddd;
+    }
+
+    .about-section p, .about-section li {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+  </style>
+
+  <div class="about-container">
+    <div class="section-title">
+      <h2>ABOUT US</h2>
+    </div>
+
+    <div class="about-sections">
+      <div class="about-section">
+        <h3>Our History</h3>
+        <p>The S4DS (Society for Data Science) chapter at Dr. D. Y. Patil Institute of Technology, Pimpri was founded on 23rd September 2022 and officially inaugurated on 1st November 2023. With 96 student members and 6 faculty coordinators, the chapter aims to foster learning, innovation, and collaboration in data science and AI.</p><br>
+        <p>Guided by national mentors — Mr. Amol Goje, Dr. Amlan Chakraborti, and Dr. Neha Sharma — S4DS-DIT has evolved into a dynamic student-led body. The chapter focuses on bridging the gap between theory and practice while promoting technical excellence, interdisciplinary thinking, and professional development to build future-ready, data-driven minds..</p>
+      </div>
+
+      <div class="about-section">
+        <h3>Vision & Mission</h3>
+        <p><strong>Vision:</strong> To create a world where data literacy is accessible to all, and data-driven solutions transform every sector of society.</p>
+        <p><strong>Mission:</strong> We empower students from all disciplines to harness the power of data through education, practical experience, and community building.</p>
+        <p><strong>Core Values:</strong></p>
+        <ul>
+          <li>Inclusive learning environment</li>
+          <li>Practical, hands-on education</li>
+          <li>Collaboration across disciplines</li>
+          <li>Ethical data practices</li>
+          <li>Community impact through data</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Faculty Coordinators Section -->
+    <section style="padding: 3rem 1rem; background-color: #0f1a2b; font-family: 'Segoe UI', sans-serif;">
+      <div style="max-width: 1000px; margin: auto;">
+        <h3 style="
+          color: #ffffff;
+          text-align: center;
+          margin-bottom: 2.5rem;
+          font-size: 2.2rem;
+          font-weight: 700;
+          text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+        ">
+          Our Faculty Coordinators
+        </h3>
+
+        <div style="
+          background-color: #1b1b1b;
+          border-radius: 20px;
+          padding: 2rem;
+          text-align: center;
+          box-shadow: 0 0 20px rgba(77, 184, 255, 0.2);
+          max-width: 600px;
+          margin: auto;
+          transition: all 0.3s ease;
+        " onmouseover="this.style.boxShadow='0 0 40px rgba(77, 184, 255, 0.35)'" onmouseout="this.style.boxShadow='0 0 20px rgba(77, 184, 255, 0.2)'">
+
+          <img src="images/Teacher.jpg" alt="Dr. Priya Sharma" style="
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.2rem;
+            border: 3px solid #4db8ff;
+            box-shadow: 0 0 10px rgba(77, 184, 255, 0.4);
+          ">
+
+          <h4 style="margin: 0.5rem 0; font-size: 1.4rem; font-weight: 700; color: #ffffff;">
+            Mrs.Aparna Kulkarni
+          </h4>
+          <p style="margin: 0.2rem 0; font-size: 1rem; color: #cccccc;">
+            Professor at Artificial Intelligence and Data Science Department
+          </p>
+        </div>
+      </div>
+    </section>
+
+<!-- Core Team Section -->
+<section id="team" style="background-color: #0b1220; padding: 4rem 1rem; font-family: 'Poppins', sans-serif; color: #fff;">
+  <div style="text-align: center; margin-bottom: 3rem;">
+    <h2 style="font-size: 2.8rem;">Our Core Team</h2>
+    <p style="font-size: 1rem; color: #ccc;">Meet the leaders driving our vision forward.</p>
+  </div>
+
+  <div class="team-grid">
+    <!-- Team Member -->
+    <div class="team-card">
+      <img src="images/president.jpg" alt="Gouri Gupta">
+      <h3>Gouri Gupta</h3>
+      <p>President</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/vise-president.jpg" alt="Abhinav Belhekar">
+      <h3>Abhinav Belhekar</h3>
+      <p>Vice President</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/secretary.jpg" alt="Gitesh Patil">
+      <h3>Gitesh Patil</h3>
+      <p>Secretary</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/TREASURER .jpg" alt="Atharva Dusane">
+      <h3>Atharva Dusane</h3>
+      <p>Treasurer</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/EVENT MANAGEMENT LEAD.jpg" alt="Vaibhavi Pakhale">
+      <h3>Vaibhavi Pakhale</h3>
+      <p>Event Management Lead</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/tech_lead.jpg" alt="Vinit Yeole">
+      <h3>Vinit Yeole</h3>
+      <p>Technical Lead</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/MARKETING & CAMPAIGNING LEAD.jpg" alt="Jash Desai">
+      <h3>Jash Desai</h3>
+      <p>Marketing & Campaigning Lead</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/cultural_lead.jpg" alt="Vaibhavi Khilare">
+      <h3>Vaibhavi Khilare</h3>
+      <p>Cultural Lead</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/DESIGN LEAD .jpg" alt="Tanmay Patil">
+      <h3>Tanmay Patil</h3>
+      <p>Design Lead</p>
+    </div>
+
+    <div class="team-card">
+      <img src="images/photographerLead.jpg" alt="Shreevardhan Iyer">
+      <h3>Shreevardhan Iyer</h3>
+      <p>Photography Lead</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-section {
+    padding: 80px 20px;
+    background-color: #0b1220;
+    text-align: center;
+  }
+
+  .team-section h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .team-section p {
+    font-size: 1.1rem;
+    color: #bbb;
+    margin-bottom: 40px;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+  }
+
+  .team-card {
+    background-color: #121212;
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(33, 150, 243, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .team-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 40px rgba(33, 150, 243, 0.5);
+  }
+
+  .team-card img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 4px solid #2196f3;
+    object-fit: cover;
+    object-position: center;
+    background-color: #fff;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 12px rgba(33, 150, 243, 0.4);
+  }
+
+  .team-card h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #fff;
+  }
+
+  .team-card p {
+    font-size: 1rem;
+    color: #bbb;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .team-card img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .team-card {
+      padding: 1.5rem 1rem;
+    }
+
+    .team-section h2 {
+      font-size: 2rem;
+    }
+
+    .team-section p {
+      font-size: 1rem;
+    }
+  }
+</style>
+<section id="creators" style="padding: 80px 20px; background-color: #0b0f1a; text-align: center;">
+  <h2 style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 12px;">Crafted with Code & Creativity</h2>
+  <p style="color: #aaa; font-size: 1rem; margin-bottom: 40px;">The innovators behind this experience</p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; max-width: 1100px; margin: auto;">
+    
+    <!-- Creator 1 -->
+    <div style="
+      background-color: #111;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 174, 255, 0.25);
+      transition: all 0.4s ease;
+      width: 280px;
+      text-align: center;
+    " onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 0 30px rgba(0,174,255,0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 15px rgba(0,174,255,0.25)';">
+      <img src="images/damini.jpg" alt="Damini Karankal" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 4px solid #00bfff; margin-bottom: 20px;">
+      <div style="font-size: 1.25rem; font-weight: bold; color: white;">Damini Karankal</div>
+      <p style="margin-top: 10px; color: #ccc; font-size: 0.95rem;">Designs smooth, user-friendly interfaces with a touch of creativity and elegance.</p>
+    </div>
+
+    <!-- Creator 2 -->
+    <div style="
+      background-color: #111;
+      padding: 30px 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 174, 255, 0.25);
+      transition: all 0.4s ease;
+      width: 280px;
+      text-align: center;
+    " onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 0 30px rgba(255,20,147,0.5)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 15px rgba(0,174,255,0.25)';">
+      <img src="images/sai.jpg" alt="Sai Jadhav" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; border: 4px solid #00bfff; margin-bottom: 20px;">
+      <div style="font-size: 1.25rem; font-weight: bold; color: white;">Sai Jadhav</div>
+      <p style="margin-top: 10px; color: #ccc; font-size: 0.95rem;">Builds reliable systems that keep everything running smoothly behind the scenes.</p>
+    </div>
+
+  </div>
+</section>
+
+
+    <section id="events" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Events</h2>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/web-3.jpeg" alt="Data Workshop">
+                    </div>
+                    <div class="event-info">
+                        <h3> Blockchain and Web 3.0 Bootcamp</h3>
+                        <span class="date">7th july 2025 | 03:30AM</span>
+                        <p>2nd-year students explored the future of tech with an insightful session on Blockchain and Web 3.0, led by 3rd-year peers.</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/FDP.png" alt="Hackathon">
+                    </div>
+                    <div class="event-info">
+                        <h3>One-Day Faculty Workshop</h3>
+                        <span class="date">14th June 2025 </span>
+                        <p>Faculty embraced Design Thinking with experts from Agile Network India, focusing on Empathize, Ideate, and Innovate.</p>
+    
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/magzine.png" alt="Guest Lecture">
+                    </div>
+                    <div class="event-info">
+                        <h3>AI Spectrum Unveiled</h3>
+                        <span class="date">22 May 2025 </span>
+                        <p>The AIDS Department proudly launched "AI Spectrum," its annual magazine showcasing academic achievements, student projects, and vibrant departmental life, curated by the dedicated S4DS Professional Body Chapter.</p>
+
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/llm.png" alt="Machine Learning">
+                    </div>
+                    <div class="event-info">
+                        <h3> Exploring the Future of AI: LLMs and RAG</h3>
+                        <span class="date">9th April 2025 </span>
+                        <p> Atharv Patil and Zuber Khan led an insightful, interactive session on Large Language Models (LLMs) and the power of Retrieval-Augmented Generation (RAG) for peers and juniors in the AIDS Department</p>
+            
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/event3/2.jpg" alt="Conference">
+                    </div>
+                    <div class="event-info">
+                        <h3> QuizBate</h3>
+                        <span class="date">26 March 2025</span>
+            <p> Successfully hosted QuizBate on March 26, 2025, where 1st and 2nd-year students showcased their AI knowledge in a thrilling quiz and debated key AI topics</p>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/NextWave.png" alt="Conference">
+                    </div>
+                    <div class="event-info">
+                        <h3>Gen AI Workshop by Nextwave</h3>
+                        <span class="date">21 March 2025</span>
+            <p>We hosted an insightful and highly engaging Gen AI Workshop on March 21, 2025, led by Nextwave's Abhinav Devguptapu Sir, enhancing participants' practical AI knowledge</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/session.png" alt="Conference">
+                    </div>
+                    <div class="event-info">
+                        <h3>AI & Data Science in Action</h3>
+                        <span class="date">04 March 2025</span>
+            <p>The AI & DS Dept. and S4DS organized a webinar with alumnus Astitva Karunesh, who shared insights into AI & Data Science applications and career pathways with over 125 attendees</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/event4/cover.jpg" alt="Conference">
+                    </div>
+                    <div class="event-info">
+                        <h3>CG Mini Project Exhibition</h3>
+                        <span class="date">21 March 2025</span>
+            <p>The Society for Data Science successfully hosted its Computer Graphics Project Exhibition, where students showcased their innovative CG projects, demonstrating exceptional creativity and technical prowess.</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/event1/1.jpg" alt="Conference">
+                    </div>
+                    <div class="event-info">
+                        <h3>VORTEXA: Hackathon competition</h3>
+                        <span class="date">27 September 2024</span>
+            <p>We  successfully hosted its flagship two-day hackathon, witnessing over 55 teams tackle challenging problems, culminating in the recognition of three innovative winners by a panel of esteemed judges, including industry experts from Deloitte and InfoCepts, and the S4DS president</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/Iot.png" alt="Conference">
+                    </div>
+                    <div class="event-info">
+                        <h3>Showcasing Innovation in AI & IoT</h3>
+                        <span class="date">30 April, 2024</span>
+            <p>We hosted an insightful and highly engaging Gen AI Workshop on March 21, 2025, led by Nextwave's Abhinav Devguptapu Sir, enhancing participants' practical AI knowledge</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/Neha.png" alt="Conference">
+                    </div>
+                    <div class="event-info">
+                        <h3>Empowering Data Scientists: COVID-19 Analytics & S4DS Opportunities</h3>
+                        <span class="date">2 March, 2024</span>
+            <p> Dr. Neha Sharma, Secretary of S4DS, engaged AI&DS students in an interactive session on March 2, 2024, highlighting data analytics' critical role in the COVID-19 pandemic response and detailing S4DS's mission, courses, and internship opportunities in data science</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="images/S4DS.png" alt="Conference">
+                    </div>
+                    <div class="event-info">
+                        <h3>S4DS Student Chapter Inaugurated </h3>
+                        <span class="date">1st November 2023</span>
+            <p>The AI&DS Department inaugurated its S4DS Student's Chapter with insights from Dr. Parikshit Mahalle and technical events "DataVerse" and "S4DS-ShowDown," benefiting over 100 students and fostering professional development in data science</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+   
+
+   <section id="event-gallery">
+  <style>
+    #event-gallery {
+      background-color: #0d1b2a;
+      padding: 60px 20px;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    #event-gallery h2 {
+      font-size: 2.5rem;
+      border-bottom: 3px solid #1ba1f2;
+      display: inline-block;
+      padding-bottom: 10px;
+      margin-bottom: 40px;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 25px;
+    }
+
+    .event-card {
+      background-color: #1c2e40;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .event-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .event-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #1ba1f2;
+    }
+
+    .event-card p {
+      color: #ccc;
+    }
+
+    #eventsModal,
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    #eventsModal .modal-content,
+    #lightbox .modal-content {
+      background: #1e2a38;
+      border-radius: 10px;
+      padding: 30px;
+      max-width: 1000px;
+      width: 90%;
+      color: white;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    #lightbox-img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 40px;
+    }
+
+    .lightbox-nav span,
+    .close-lightbox {
+      font-size: 3rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2.5rem;
+    }
+
+    .back-button {
+      background-color: #1ba1f2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      z-index: 10001;
+    }
+  </style>
+
+  <div style="max-width: 1200px; margin: auto; text-align: center;">
+    <h2>Gallery</h2>
+    <div class="event-grid">
+      <div class="event-card" onclick="showGallery(0)">
+        <img src="images/event1/1.jpg" />
+        <div style="padding: 20px;">
+          <h3>VORTEXA Hackathon</h3>
+          <p>27th & 28th Sept 2024</p>
+          <p>Participants: 52 Teams (202 students)</p>
+        </div>
+      </div>
+        <div class="event-card" onclick="showGallery(1)">
+        <img src="images/event2/1.jpeg" />
+        <div style="padding: 20px;">
+          <h3>Tech-Navinya</h3>
+          <p>May 10, 2025</p>
+          <p>Participants: 200+ Students.</p>
+        </div>
+      </div>
+        <div class="event-card" onclick="showGallery(2)">
+        <img src="images/event3/2.jpg" />
+        <div style="padding: 20px;">
+          <h3>QUIZBATE (Coding & Debate)</h3>
+          <p>26th Mar 2025</p>
+          <p>Participants: 80+ Students</p>
+        </div>
+      </div>
+       
+      <div class="event-card" onclick="showGallery(3)">
+        <img src="images/event4/cover.jpg" />
+        <div style="padding: 20px;">
+          <h3>CG Mini Project Presentation</h3>
+          <p>25th Oct 2024</p>
+          <p>Participants: 55 Groups (210 students)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Gallery -->
+  <div id="eventsModal">
+    <div class="modal-content">
+      <button class="back-button" id="backBtn">&larr; Back</button>
+      <h2 id="modalTitle"></h2>
+      <div id="galleryContainer" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px;"></div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" />
+    <div class="lightbox-nav">
+      <span onclick="prevImage(event)">&#8592;</span>
+      <span onclick="nextImage(event)">&#8594;</span>
+    </div>
+  </div>
+
+  <script>
+   const galleries = [
+  [
+    "images/event1/1.jpg", "images/event1/2.jpg", "images/event1/3.jpg",
+    "images/event1/4.jpg", "images/event1/5.jpg", "images/event1/6.jpg",
+    "images/event1/7.jpg", "images/event1/8.jpg", "images/event1/9.jpg",
+    "images/event1/10.jpg", "images/event1/11.jpg", "images/event1/12.jpg"
+  ],
+  [
+    "images/event2/1.jpeg", "images/event2/2.jpg", "images/event2/3.jpg",
+    "images/event2/4.jpg", "images/event2/5.jpg", "images/event2/6.jpg",
+    "images/event2/7.jpg", "images/event2/8.jpg", "images/event2/9.jpg",
+    "images/event2/10.jpg", "images/event2/11.jpg", "images/event2/12.jpg",
+    "images/event2/13.jpg", "images/event2/14.jpg", "images/event2/15.jpg"
+  ],
+  [
+    "images/event3/1.jpg", "images/event3/2.jpg", "images/event3/3.jpg",
+    "images/event3/4.jpg", "images/event3/5.jpg", "images/event3/6.jpg",
+    "images/event3/7.jpg", "images/event3/8.jpg", "images/event3/9.jpg",
+    "images/event3/10.jpg", "images/event3/11.jpg", "images/event3/12.jpg"
+  ],
+  [
+    "images/event4/1.jpg", "images/event4/2.jpg", "images/event4/3.jpg",
+    "images/event4/4.jpg", "images/event4/5.jpg", "images/event4/6.jpg",
+    "images/event4/7.jpg", "images/event4/8.jpg", "images/event4/9.jpg"  ],
+  [
+    "images/event5/1.jpg", "images/event5/2.jpg", "images/event5/3.jpg",
+    "images/event5/4.jpg", "images/event5/5.jpg", "images/event5/6.jpg",
+    "images/event5/7.jpg", "images/event5/8.jpg", "images/event5/9.jpg",
+    "images/event5/10.jpg", "images/event5/11.jpg", "images/event5/12.jpg",
+    "images/event5/13.jpg", "images/event5/14.jpg", "images/event5/15.jpg"
+  ],
+  [
+    "images/event6/1.jpg", "images/event6/2.jpg", "images/event6/3.jpg",
+    "images/event6/4.jpg", "images/event6/5.jpg", "images/event6/6.jpg",
+    "images/event6/7.jpg", "images/event6/8.jpg", "images/event6/9.jpg"
+  ],
+  [
+    "images/event7/1.jpg", "images/event7/2.jpg", "images/event7/3.jpg",
+    "images/event7/4.jpg", "images/event7/5.jpg", "images/event7/6.jpg",
+    "images/event7/7.jpg", "images/event7/8.jpg", "images/event7/9.jpg",
+    "images/event7/10.jpg", "images/event7/11.jpg", "images/event7/12.jpg",
+    "images/event7/13.jpg", "images/event7/14.jpg", "images/event7/15.jpg"
+  ]
+];
+
+    const titles = ["VORTEXA Hackathon - Gallery", "Tech-Navinya - Gallery",  "QUIZBATE (Coding & Debate) - Gallery","CG Mini Project Presentation - Gallery"];
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    function showGallery(index) {
+      currentGallery = galleries[index];
+      document.getElementById("modalTitle").innerText = titles[index];
+      const container = document.getElementById("galleryContainer");
+      container.innerHTML = "";
+      currentGallery.forEach((src, i) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.className = "gallery-img";
+        img.onclick = () => openImage(i);
+        container.appendChild(img);
+      });
+      document.getElementById("eventsModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("eventsModal").style.display = "none";
+    }
+
+    function openImage(index) {
+      currentIndex = index;
+      document.getElementById("lightbox-img").src = currentGallery[currentIndex];
+      document.getElementById("lightbox").style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    function nextImage(e) {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % currentGallery.length;
+      document.getElementById("lightbox-img").src = currentGallery[currentIndex];
+    }
+
+    function prevImage(e) {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+      document.getElementById("lightbox-img").src = currentGallery[currentIndex];
+    }
+
+    document.addEventListener("keydown", (e) => {
+      const modalVisible = document.getElementById("eventsModal").style.display === "flex";
+      const lightboxVisible = document.getElementById("lightbox").style.display === "flex";
+
+      if (lightboxVisible) {
+        if (e.key === "ArrowRight") nextImage(e);
+        if (e.key === "ArrowLeft") prevImage(e);
+        if (e.key === "Escape") closeLightbox();
+      }
+
+      if (modalVisible && e.key === "Escape") {
+        closeModal();
+      }
+    });
+
+    document.getElementById("backBtn").addEventListener("click", closeModal);
+  </script>
+   </section>
+  <section id="join-us" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Join Us</h2>
+            </div>
+            <div class="join-form">
+                <form id="membership-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="major">Major/Department</label>
+                        <input type="text" id="major" name="major" required="">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year of Study</label>
+                        <select id="year" name="year" required="">
+                            <option value="">Select Year</option>
+                            <option value="Freshman">Freshman</option>
+                            <option value="Sophomore">Sophomore</option>
+                            <option value="Junior">Junior</option>
+                            <option value="Senior">Senior</option>
+                            <option value="Graduate">Graduate</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Data Science Experience Level</label>
+                        <select id="experience" name="experience" required="">
+                            <option value="">Select Level</option>
+                            <option value="Beginner">Beginner (0-6 months)</option>
+                            <option value="Intermediate">Intermediate (6 months - 2 years)</option>
+                            <option value="Advanced">Advanced (2+ years)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="interests">What areas of data science interest you most?</label>
+                        <textarea id="interests" name="interests"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About S4DS</h3>
+                    <p>The Society for Data Science is a student-run organization dedicated to promoting data literacy and fostering a community of data enthusiasts through education, collaboration, and real-world applications.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#join-us">Join Us</a></li>
+                        <li><a href="#event-gallery">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Learning Materials</a></li>
+                        <li><a href="#">Career Opportunities</a></li>
+                        <li><a href="#">Research Papers</a></li>
+                        <li><a href="#">Tutorial Videos</a></li>
+                        <li><a href="#">Recommended Books</a></li>
+                        <li><a href="#">Dataset Repository</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-links-footer">
+                <a href="https://www.linkedin.com/company/society-for-data-science-dit/posts/?feedView=all"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/s4ds_dit/profilecard/?igsh=MXRheWF4OGc2OHNsYw=="><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="copyright">
+             
+                <p>&copy; 2025 Society for Data Science. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="image-modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="Enlarged view">
+        </div>
+    </div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+        
+        hamburger.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                nav.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('membership-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application! We will contact you soon.');
+            this.reset();
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Image modal
+        function openModal(imageSrc) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            
+            modal.classList.add('show');
+            modalImg.src = imageSrc;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside the image
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('image-modal');
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Animation on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.section-title, .event-card, .team-member, .contact-card, .about-section, .coordinator-card, .gallery-item, .footer-section');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state for animated elements
+        document.querySelectorAll('.section-title, .event-card, .team-member, .contact-card, .about-section, .coordinator-card, .gallery-item, .footer-section').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Add hover effect to blog read more links
+        document.querySelectorAll('#blog a').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(5px)';
+            });
+            link.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
