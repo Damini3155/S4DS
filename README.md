@@ -1,9 +1,8 @@
-Here’s a **README.md** for your project based on the contents of your `layout.html` file, which is a well-structured website for the **S4DS – Society for Data Science**:
 
 ---
 
 ````markdown
-# 🌐 Society for Data Science (S4DS) – Student Chapter Website
+# 🌐 Society for Data Science (S4DS) 
 
 Welcome to the official website of the **S4DS Student Chapter** at Dr. D. Y. Patil Institute of Technology, Pimpri. This website serves as a digital hub for students, faculty, and visitors to explore our vision, meet the team, and stay updated with our events.
 
@@ -60,40 +59,9 @@ The Society for Data Science (S4DS) is committed to cultivating innovation, coll
 
 ---
 
-## 📸 Screenshots
 
-*(You can add images here showing different sections like Events, Team, etc.)*
-
----
-
-## 🤝 Credits
-
-* **Damini Karankal** – UI/UX & Frontend Development
-* **Sai Jadhav** – Backend Integration & System Support
-
-Special thanks to all the core team members and faculty mentors for their guidance.
-
----
-
-## 📬 Contact
-
-📧 Email: \[[your-email@example.com](mailto:your-email@example.com)]
-🌐 Visit us: \[Insert actual hosted website link, if any]
-
----
 
 ## 📄 License
 
 This project is licensed under the **MIT License**.
 Feel free to reuse and modify with proper credits.
-
----
-
-> “Empowering the next generation of data scientists through collaboration and creativity.”
-
-```
-
----
-
-Would you like me to create and export this as a `.md` file for your GitHub or documentation?
-```
