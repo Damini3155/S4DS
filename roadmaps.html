@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Roadmaps - S4DS Society for Data Science</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Grid -->
+    <div class="grid-background"></div>
+    
+    <!-- Floating Tech Icons -->
+    <div class="floating-icons">
+        <!-- Orbit 1 - Outer -->
+        <i class="fab fa-python orbit-1" style="--angle: 0deg;"></i>
+        <i class="fas fa-chart-line orbit-1" style="--angle: 120deg;"></i>
+        <i class="fas fa-robot orbit-1" style="--angle: 240deg;"></i>
+        
+        <!-- Orbit 2 - Middle -->
+        <i class="fab fa-js-square orbit-2" style="--angle: 0deg;"></i>
+        <i class="fas fa-database orbit-2" style="--angle: 180deg;"></i>
+        
+        <!-- Orbit 3 - Inner -->
+        <i class="fas fa-brain orbit-3" style="--angle: 0deg;"></i>
+        <i class="fab fa-react orbit-3" style="--angle: 90deg;"></i>
+        <i class="fas fa-code orbit-3" style="--angle: 180deg;"></i>
+        <i class="fas fa-server orbit-3" style="--angle: 270deg;"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-network"></i>
+                <span>S4DS</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="roadmaps.html" class="nav-link active">Roadmaps</a></li>
+                <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1 class="page-title">
+                <span class="glowing-text">Learning Roadmaps</span>
+            </h1>
+            <p class="page-subtitle">Your Path to Success</p>
+            <p class="page-description">
+                Structured learning paths to guide your journey in Data Science, Full Stack Development, and Cyber Security.
+            </p>
+        </div>
+    </section>
+
+    <!-- Roadmaps Selection -->
+    <section class="section">
+        <div class="container">
+            <div class="roadmap-tabs">
+                <button class="tab-button active" data-tab="data-science" onclick="showRoadmap('data-science')">
+                    <i class="fas fa-chart-line"></i>
+                    Data Science
+                </button>
+                <button class="tab-button" data-tab="full-stack" onclick="showRoadmap('full-stack')">
+                    <i class="fas fa-code"></i>
+                    Full Stack Development
+                </button>
+                <button class="tab-button" data-tab="cyber-security" onclick="showRoadmap('cyber-security')">
+                    <i class="fas fa-shield-alt"></i>
+                    Cyber Security
+                </button>
+            </div>
+
+            <!-- Data Science Roadmap -->
+            <div id="data-science" class="roadmap-content active">
+                <div class="roadmap-header">
+                    <h2>Data Science Learning Path</h2>
+                    <p>Master the complete data science pipeline from statistics to machine learning and deployment.</p>
+                </div>
+
+                <div class="roadmap-timeline">
+                    <!-- Foundation Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 1: Foundation (2-3 months)</h3>
+                            <span class="phase-duration">Beginner</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Mathematics & Statistics</h4>
+                                    <p>Linear algebra, calculus, probability, descriptive & inferential statistics</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Khan Academy</span>
+                                        <span class="resource-tag">MIT OpenCourseWare</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Python Programming</h4>
+                                    <p>Syntax, data structures, functions, OOP, libraries (NumPy, Pandas)</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Python.org Tutorial</span>
+                                        <span class="resource-tag">Codecademy</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Data Manipulation</h4>
+                                    <p>Pandas for data cleaning, transformation, and exploratory data analysis</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Pandas Documentation</span>
+                                        <span class="resource-tag">DataCamp</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Intermediate Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 2: Data Analysis & Visualization (2-3 months)</h3>
+                            <span class="phase-duration">Intermediate</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Data Visualization</h4>
+                                    <p>Matplotlib, Seaborn, Plotly for creating compelling visual stories</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Matplotlib Docs</span>
+                                        <span class="resource-tag">Seaborn Gallery</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>SQL & Databases</h4>
+                                    <p>Query optimization, joins, aggregations, database design principles</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">SQLite Tutorial</span>
+                                        <span class="resource-tag">PostgreSQL Docs</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">6</div>
+                                <div class="step-content">
+                                    <h4>Statistical Analysis</h4>
+                                    <p>Hypothesis testing, A/B testing, correlation analysis, regression</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">SciPy Documentation</span>
+                                        <span class="resource-tag">Statsmodels</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 3: Machine Learning (3-4 months)</h3>
+                            <span class="phase-duration">Advanced</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">7</div>
+                                <div class="step-content">
+                                    <h4>Machine Learning Fundamentals</h4>
+                                    <p>Supervised/unsupervised learning, model evaluation, cross-validation</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Scikit-learn</span>
+                                        <span class="resource-tag">Andrew Ng Course</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">8</div>
+                                <div class="step-content">
+                                    <h4>Deep Learning</h4>
+                                    <p>Neural networks, CNNs, RNNs, TensorFlow/PyTorch frameworks</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">TensorFlow Tutorials</span>
+                                        <span class="resource-tag">PyTorch Documentation</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">9</div>
+                                <div class="step-content">
+                                    <h4>Model Deployment</h4>
+                                    <p>Flask/FastAPI, Docker, cloud platforms (AWS, GCP, Azure)</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Flask Documentation</span>
+                                        <span class="resource-tag">Docker Tutorial</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specialization Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 4: Specialization (3-6 months)</h3>
+                            <span class="phase-duration">Expert</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">10</div>
+                                <div class="step-content">
+                                    <h4>Choose Your Path</h4>
+                                    <p>NLP, Computer Vision, Time Series, Recommendation Systems, or MLOps</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Hugging Face</span>
+                                        <span class="resource-tag">OpenCV</span>
+                                        <span class="resource-tag">MLflow</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Stack Development Roadmap -->
+            <div id="full-stack" class="roadmap-content">
+                <div class="roadmap-header">
+                    <h2>Full Stack Development Learning Path</h2>
+                    <p>Build complete web applications from frontend to backend and deployment.</p>
+                </div>
+
+                <div class="roadmap-timeline">
+                    <!-- Foundation Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 1: Frontend Fundamentals (2-3 months)</h3>
+                            <span class="phase-duration">Beginner</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>HTML & CSS</h4>
+                                    <p>Semantic HTML, CSS Grid, Flexbox, responsive design, CSS frameworks</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">MDN Web Docs</span>
+                                        <span class="resource-tag">CSS Tricks</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>JavaScript Fundamentals</h4>
+                                    <p>ES6+, DOM manipulation, async/await, modules, error handling</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">JavaScript.info</span>
+                                        <span class="resource-tag">FreeCodeCamp</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Version Control</h4>
+                                    <p>Git, GitHub, branching strategies, collaborative workflows</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Git Documentation</span>
+                                        <span class="resource-tag">GitHub Guides</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Frontend Framework Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 2: Frontend Framework (2-3 months)</h3>
+                            <span class="phase-duration">Intermediate</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>React.js</h4>
+                                    <p>Components, hooks, state management, routing, context API</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">React Documentation</span>
+                                        <span class="resource-tag">React Router</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>State Management</h4>
+                                    <p>Redux, Zustand, or Context API for complex state handling</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Redux Toolkit</span>
+                                        <span class="resource-tag">Zustand Guide</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">6</div>
+                                <div class="step-content">
+                                    <h4>Build Tools</h4>
+                                    <p>Webpack, Vite, npm/yarn, package management, bundling</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Vite Guide</span>
+                                        <span class="resource-tag">Webpack Docs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 3: Backend Development (3-4 months)</h3>
+                            <span class="phase-duration">Advanced</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">7</div>
+                                <div class="step-content">
+                                    <h4>Node.js & Express</h4>
+                                    <p>Server-side JavaScript, REST APIs, middleware, authentication</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Node.js Docs</span>
+                                        <span class="resource-tag">Express.js Guide</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">8</div>
+                                <div class="step-content">
+                                    <h4>Databases</h4>
+                                    <p>MongoDB, PostgreSQL, database design, ORMs (Mongoose, Prisma)</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">MongoDB University</span>
+                                        <span class="resource-tag">Prisma Documentation</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">9</div>
+                                <div class="step-content">
+                                    <h4>API Design</h4>
+                                    <p>RESTful APIs, GraphQL, API documentation, testing</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">GraphQL Tutorial</span>
+                                        <span class="resource-tag">Postman Learning</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Deployment Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 4: DevOps & Deployment (2-3 months)</h3>
+                            <span class="phase-duration">Expert</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">10</div>
+                                <div class="step-content">
+                                    <h4>Cloud & Deployment</h4>
+                                    <p>AWS/Vercel/Netlify, Docker, CI/CD, monitoring, scaling</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">AWS Documentation</span>
+                                        <span class="resource-tag">Docker Tutorial</span>
+                                        <span class="resource-tag">GitHub Actions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cyber Security Roadmap -->
+            <div id="cyber-security" class="roadmap-content">
+                <div class="roadmap-header">
+                    <h2>Cyber Security Learning Path</h2>
+                    <p>Protect digital assets and systems from security threats and vulnerabilities.</p>
+                </div>
+
+                <div class="roadmap-timeline">
+                    <!-- Foundation Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 1: Security Fundamentals (2-3 months)</h3>
+                            <span class="phase-duration">Beginner</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Networking Basics</h4>
+                                    <p>TCP/IP, DNS, HTTP/HTTPS, firewalls, VPNs, network protocols</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Cisco Networking</span>
+                                        <span class="resource-tag">Wireshark Tutorial</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Operating Systems</h4>
+                                    <p>Linux/Windows security, command line, file systems, permissions</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Linux Command Line</span>
+                                        <span class="resource-tag">Windows Security</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Security Principles</h4>
+                                    <p>CIA triad, risk assessment, threat modeling, security frameworks</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">NIST Framework</span>
+                                        <span class="resource-tag">OWASP Top 10</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Intermediate Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 2: Security Tools & Techniques (3-4 months)</h3>
+                            <span class="phase-duration">Intermediate</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Vulnerability Assessment</h4>
+                                    <p>Nmap, Nessus, OpenVAS, vulnerability scanning, penetration testing basics</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Nmap Documentation</span>
+                                        <span class="resource-tag">Metasploit Guide</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">5</div>
+                                <div class="step-content">
+                                    <h4>Web Application Security</h4>
+                                    <p>SQL injection, XSS, CSRF, authentication, session management</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">OWASP WebGoat</span>
+                                        <span class="resource-tag">Burp Suite</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">6</div>
+                                <div class="step-content">
+                                    <h4>Cryptography</h4>
+                                    <p>Encryption algorithms, PKI, digital certificates, hashing</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Cryptography Course</span>
+                                        <span class="resource-tag">OpenSSL Tutorial</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 3: Advanced Security (3-4 months)</h3>
+                            <span class="phase-duration">Advanced</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">7</div>
+                                <div class="step-content">
+                                    <h4>Incident Response</h4>
+                                    <p>SIEM tools, log analysis, forensics, malware analysis</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Splunk Fundamentals</span>
+                                        <span class="resource-tag">SANS FOR508</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">8</div>
+                                <div class="step-content">
+                                    <h4>Cloud Security</h4>
+                                    <p>AWS/Azure security, container security, DevSecOps practices</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">AWS Security</span>
+                                        <span class="resource-tag">Docker Security</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-number">9</div>
+                                <div class="step-content">
+                                    <h4>Security Automation</h4>
+                                    <p>Python scripting, automation frameworks, security orchestration</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">Python for Security</span>
+                                        <span class="resource-tag">SOAR Platforms</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Specialization Phase -->
+                    <div class="phase-section">
+                        <div class="phase-header">
+                            <h3>Phase 4: Specialization & Certification (3-6 months)</h3>
+                            <span class="phase-duration">Expert</span>
+                        </div>
+                        <div class="roadmap-steps">
+                            <div class="step-item">
+                                <div class="step-number">10</div>
+                                <div class="step-content">
+                                    <h4>Choose Your Path</h4>
+                                    <p>Penetration Testing (CEH, OSCP), GRC (CISSP), or SOC Analyst (CySA+)</p>
+                                    <div class="step-resources">
+                                        <span class="resource-tag">CompTIA Certifications</span>
+                                        <span class="resource-tag">Offensive Security</span>
+                                        <span class="resource-tag">ISC2 CISSP</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <i class="fas fa-chart-network"></i>
+                    <span>S4DS</span>
+                </div>
+                <p>© 2025 Society for Data Science. All rights reserved.</p>
+            </div>
+            <div class="footer-center">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="roadmaps.html">Roadmaps</a>
+                    <a href="index.html#events">Events</a>
+                    <a href="team.html">Team</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Backup roadmap tab functionality
+        function showRoadmap(tabName) {
+            // Hide all roadmap contents
+            const allContents = document.querySelectorAll('.roadmap-content');
+            allContents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all buttons
+            const allButtons = document.querySelectorAll('.tab-button');
+            allButtons.forEach(button => button.classList.remove('active'));
+            
+            // Show selected content
+            const targetContent = document.getElementById(tabName);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+            
+            // Activate clicked button
+            const targetButton = document.querySelector(`[data-tab="${tabName}"]`);
+            if (targetButton) {
+                targetButton.classList.add('active');
+            }
+        }
+        
+        // Add click handlers when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabName = this.getAttribute('data-tab');
+                    showRoadmap(tabName);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

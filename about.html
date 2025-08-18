@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - S4DS Society for Data Science</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Grid -->
+    <div class="grid-background"></div>
+    
+    <!-- Floating Tech Icons -->
+    <div class="floating-icons">
+        <!-- Orbit 1 - Outer -->
+        <i class="fab fa-python orbit-1" style="--angle: 0deg;"></i>
+        <i class="fas fa-chart-line orbit-1" style="--angle: 120deg;"></i>
+        <i class="fas fa-robot orbit-1" style="--angle: 240deg;"></i>
+        
+        <!-- Orbit 2 - Middle -->
+        <i class="fab fa-js-square orbit-2" style="--angle: 0deg;"></i>
+        <i class="fas fa-database orbit-2" style="--angle: 180deg;"></i>
+        
+        <!-- Orbit 3 - Inner -->
+        <i class="fas fa-brain orbit-3" style="--angle: 0deg;"></i>
+        <i class="fab fa-react orbit-3" style="--angle: 90deg;"></i>
+        <i class="fas fa-code orbit-3" style="--angle: 180deg;"></i>
+        <i class="fas fa-server orbit-3" style="--angle: 270deg;"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-network"></i>
+                <span>S4DS</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+                <li class="nav-item"><a href="roadmaps.html" class="nav-link">Roadmaps</a></li>
+                <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1 class="page-title">
+                <span class="glowing-text">About S4DS</span>
+            </h1>
+            <p class="page-subtitle">Society for Data Science</p>
+            <p class="page-description">
+                Empowering students through data science education, innovation, and community building.
+            </p>
+        </div>
+    </section>
+
+    <!-- About Main Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Mission Section -->
+            <div class="content-section">
+                <div class="content-grid">
+                    <div class="content-text">
+                        <h2 class="content-title">Our Mission</h2>
+                        <p class="content-description">
+                            At S4DS, we are dedicated to fostering a vibrant community of data science enthusiasts, 
+                            researchers, and professionals. Our mission is to bridge the gap between academic learning 
+                            and real-world applications in the field of data science.
+                        </p>
+                        <p class="content-description">
+                            We believe that data science is not just about algorithms and statistics, but about 
+                            solving meaningful problems that impact society. Through our activities, we aim to 
+                            cultivate critical thinking, technical expertise, and ethical awareness in data science.
+                        </p>
+                    </div>
+                    <div class="content-visual">
+                        <div class="visual-card">
+                            <div class="visual-icon">
+                                <i class="fas fa-target"></i>
+                            </div>
+                            <h3>Mission Driven</h3>
+                            <p>Focused on creating meaningful impact through data science education and research.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vision Section -->
+            <div class="content-section reverse">
+                <div class="content-grid">
+                    <div class="content-visual">
+                        <div class="visual-card">
+                            <div class="visual-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Future Vision</h3>
+                            <p>Building the next generation of data scientists and AI researchers.</p>
+                        </div>
+                    </div>
+                    <div class="content-text">
+                        <h2 class="content-title">Our Vision</h2>
+                        <p class="content-description">
+                            We envision a future where every student has the opportunity to explore and excel in 
+                            data science, regardless of their background. S4DS aims to be the premier student 
+                            organization that produces skilled, ethical, and innovative data scientists.
+                        </p>
+                        <p class="content-description">
+                            Our vision extends beyond the classroom, as we work to create a supportive ecosystem 
+                            where students can collaborate on research projects, participate in competitions, 
+                            and contribute to open-source initiatives.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What We Do Section -->
+            <div class="section-header">
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-subtitle">Comprehensive programs to support your data science journey</p>
+            </div>
+
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Workshops & Training</h3>
+                    <p>Regular hands-on workshops covering machine learning, data visualization, statistical analysis, and programming fundamentals.</p>
+                    <ul class="activity-list">
+                        <li>Python & R Programming</li>
+                        <li>Machine Learning Algorithms</li>
+                        <li>Data Visualization with Tableau & Power BI</li>
+                        <li>Statistical Analysis & Research Methods</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Competitions & Hackathons</h3>
+                    <p>Organize and participate in data science competitions, hackathons, and coding challenges to apply skills in real-world scenarios.</p>
+                    <ul class="activity-list">
+                        <li>Annual Data Science Hackathon</li>
+                        <li>Kaggle Competition Teams</li>
+                        <li>Inter-college Coding Contests</li>
+                        <li>Research Paper Competitions</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Research Projects</h3>
+                    <p>Collaborative research initiatives with faculty and industry partners, focusing on cutting-edge data science applications.</p>
+                    <ul class="activity-list">
+                        <li>AI for Social Good Projects</li>
+                        <li>Industry Partnership Programs</li>
+                        <li>Open Source Contributions</li>
+                        <li>Publication Opportunities</li>
+                    </ul>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Building</h3>
+                    <p>Foster a supportive community through mentorship programs, networking events, and peer-to-peer learning opportunities.</p>
+                    <ul class="activity-list">
+                        <li>Peer Mentorship Program</li>
+                        <li>Industry Speaker Series</li>
+                        <li>Alumni Network Events</li>
+                        <li>Study Groups & Book Clubs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="values-section">
+                <div class="section-header">
+                    <h2 class="section-title">Our Core Values</h2>
+                    <p class="section-subtitle">The principles that guide everything we do</p>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-number">01</div>
+                        <h3>Innovation</h3>
+                        <p>We encourage creative thinking and innovative approaches to solving complex data problems, fostering an environment where new ideas can flourish.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-number">02</div>
+                        <h3>Collaboration</h3>
+                        <p>We believe in the power of teamwork and collective intelligence, promoting collaborative learning and cross-disciplinary partnerships.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-number">03</div>
+                        <h3>Ethics</h3>
+                        <p>We are committed to responsible data science practices, emphasizing the importance of privacy, fairness, and transparency in all our work.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-number">04</div>
+                        <h3>Excellence</h3>
+                        <p>We strive for the highest standards in everything we do, from academic pursuits to community service and professional development.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-number">05</div>
+                        <h3>Inclusivity</h3>
+                        <p>We welcome students from all backgrounds and skill levels, creating an inclusive environment where everyone can learn and grow together.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-number">06</div>
+                        <h3>Impact</h3>
+                        <p>We focus on creating meaningful impact through our projects and initiatives, addressing real-world challenges and contributing to societal good.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Join Us Section -->
+            <div class="join-section">
+                <div class="join-content">
+                    <h2 class="join-title">Ready to Join Our Community?</h2>
+                    <p class="join-description">
+                        Whether you're a beginner curious about data science or an experienced practitioner looking to contribute, 
+                        there's a place for you in S4DS. Join us in shaping the future of data science education and research.
+                    </p>
+                    <div class="join-buttons">
+                        <a href="#contact" class="cta-button primary">Join S4DS</a>
+                        <a href="index.html#events" class="cta-button secondary">View Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="footer-logo">
+                    <i class="fas fa-chart-network"></i>
+                    <span>S4DS</span>
+                </div>
+                <p>© 2025 Society for Data Science. All rights reserved.</p>
+            </div>
+            <div class="footer-center">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="roadmaps.html">Roadmaps</a>
+                    <a href="index.html#events">Events</a>
+                    <a href="team.html">Team</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
